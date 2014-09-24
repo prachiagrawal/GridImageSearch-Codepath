@@ -3,8 +3,8 @@
 
     <item
         android:id="@+id/miSelectFilter"
-        android:icon="@drawable/ic_search_filters"
+        android:icon="@drawable/ic_settings"
         android:showAsAction="always"
+        android:orderInCategory="41"
         android:title="@string/title_menu_filters"/>
-
 </menu>

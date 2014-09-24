@@ -3,22 +3,20 @@ package com.codepath.gridimagesearch.adapters;
 import java.util.List;
 
 import android.content.Context;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.codepath.gridimagesearch.R;
+import com.codepath.gridimagesearch.helpers.CropSquareTransformation;
 import com.codepath.gridimagesearch.models.ImageResult;
 import com.squareup.picasso.Picasso;
 
 public class ImageResultsAdapter extends ArrayAdapter<ImageResult> {
 	private static class ViewHolder {
 		ImageView ivImage;
-		TextView tvTitle;
 	}
 
 	public ImageResultsAdapter(Context context, List<ImageResult> images) {
@@ -39,7 +37,6 @@ public class ImageResultsAdapter extends ArrayAdapter<ImageResult> {
 			viewHolder = new ViewHolder();
 			// Lookup view for data population
 			viewHolder.ivImage = (ImageView) convertView.findViewById(R.id.ivImage);
-			viewHolder.tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
@@ -47,10 +44,9 @@ public class ImageResultsAdapter extends ArrayAdapter<ImageResult> {
 
 		// Clear out image from last time as this could be a recycled view
 		viewHolder.ivImage.setImageResource(0);
-		Picasso.with(getContext()).load(imageResult.thumbUrl).into(viewHolder.ivImage);
-
-		// Populate the title
-		viewHolder.tvTitle.setText(Html.fromHtml(imageResult.title));
+		Picasso.with(getContext()).load(imageResult.thumbUrl)
+			.transform(new CropSquareTransformation(parent.getWidth(),parent.getWidth()))
+			.into(viewHolder.ivImage);
 
 		// Return the completed view to render on screen
 		return convertView;

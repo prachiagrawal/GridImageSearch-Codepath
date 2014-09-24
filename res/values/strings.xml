@@ -17,5 +17,7 @@
     <string name="site_label">Site Filter</string>
     <string name="save_label">Save</string>
     <string name="site_prompt">Enter a website URL</string>
-
+    <string name="title_share">Share</string>
+    <string name="title_activity_search">Image Search</string>
+    
 </resources>

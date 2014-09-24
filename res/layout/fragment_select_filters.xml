@@ -1,78 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
-
+    android:padding="20sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" 
+    android:orientation="vertical">
+    
     <Spinner
-        android:id="@+id/spImgSize"
+        android:id="@+id/spFragImgSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="5sp"
         android:entries="@array/size_array"
-        android:layout_toRightOf="@+id/tvImgSize" />
+        android:layout_toRightOf="@+id/tvFragImgSize" />
 
     <TextView
-        android:id="@+id/tvImgSize"
+        android:id="@+id/tvFragImgSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/spImgSize"
+        android:layout_alignBottom="@+id/spFragImgSize"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:gravity="bottom"
         android:text="@string/size_label" />
 
     <TextView
-        android:id="@+id/tvImgColor"
+        android:id="@+id/tvFragImgColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/spImgColor"
+        android:layout_alignBottom="@+id/spFragImgColor"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tvImgSize"
+        android:layout_below="@+id/tvFragImgSize"
+        android:gravity="bottom"
         android:text="@string/color_label" />
 
     <Spinner
-        android:id="@+id/spImgColor"
+        android:id="@+id/spFragImgColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/spImgSize"
+        android:layout_alignLeft="@+id/spFragImgSize"
         android:layout_alignParentRight="true"
         android:entries="@array/color_array"
-        android:layout_below="@+id/spImgSize" />
+        android:layout_below="@+id/spFragImgSize" />
 
     <TextView
-        android:id="@+id/tvImgType"
+        android:id="@+id/tvFragImgType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/spImgType"
+        android:layout_alignBottom="@+id/spFragImgType"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tvImgColor"
+        android:layout_below="@+id/tvFragImgColor"
+        android:gravity="bottom"
         android:text="@string/type_label" />
 
     <Spinner
-        android:id="@+id/spImgType"
+        android:id="@+id/spFragImgType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/spImgColor"
+        android:layout_alignLeft="@+id/spFragImgColor"
         android:layout_alignParentRight="true"
         android:entries="@array/type_array"
-        android:layout_below="@+id/spImgColor" />
+        android:layout_below="@+id/spFragImgColor" />
 
     <TextView
-        android:id="@+id/tvSite"
+        android:id="@+id/tvFragSite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tvImgType"
+        android:layout_below="@+id/tvFragImgType"
+        android:gravity="bottom"
+        android:paddingTop="15sp"
         android:text="@string/site_label" />
 
     <EditText
-        android:id="@+id/etSite"
+        android:id="@+id/etFragSite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tvSite"
-        android:layout_alignBottom="@+id/tvSite"
-        android:layout_alignLeft="@+id/spImgType"
+        android:layout_alignBaseline="@+id/tvFragSite"
+        android:layout_alignBottom="@+id/tvFragSite"
+        android:layout_alignLeft="@+id/spFragImgType"
         android:layout_alignParentRight="true"
         android:inputType="textUri"
         android:hint="@string/site_prompt"
@@ -82,13 +90,12 @@
     </EditText>
 
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/btnFragSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etSite"
+        android:layout_below="@+id/etFragSite"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
-        android:onClick="onSave"
+        android:layout_marginTop="38dp"
         android:text="@string/save_label" />
 
 </RelativeLayout>
